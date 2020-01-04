@@ -3,24 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_myrecipe">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.cookwithpuppy.ui.search.SearchFragment"
-        android:label="@string/menu_home"
+        android:id="@+id/nav_myrecipe"
+        android:name="com.example.cookwithpuppy.ui.myrecipes.MyRecipesFragment"
+        android:label="@string/menu_myrecipe"
         tools:layout="@layout/fragment_myrecipe" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.cookwithpuppy.ui.myrecipe.MyRecipeFragment"
-        android:label="@string/menu_gallery"
+        android:id="@+id/nav_search"
+        android:name="com.example.cookwithpuppy.ui.search.SearchFragment"
+        android:label="@string/menu_search"
         tools:layout="@layout/fragment_search" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_favourite"
         android:name="com.example.cookwithpuppy.ui.favourite.FavouriteFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/menu_favourite"
         tools:layout="@layout/fragment_favourite" />
 
     <fragment

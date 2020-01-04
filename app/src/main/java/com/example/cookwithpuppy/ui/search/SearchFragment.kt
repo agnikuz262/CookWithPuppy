@@ -12,18 +12,18 @@ import com.example.cookwithpuppy.R
 
 class SearchFragment : Fragment() {
 
-    private lateinit var homeViewModel: SearchViewModel
+    private lateinit var searchViewModel: SearchViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
+        searchViewModel =
             ViewModelProviders.of(this).get(SearchViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_myrecipe, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-        homeViewModel.text.observe(this, Observer {
+        val root = inflater.inflate(R.layout.fragment_search, container, false)
+        val textView: TextView = root.findViewById(R.id.text_gallery)
+        searchViewModel.text.observe(this, Observer {
             textView.text = it
         })
         return root

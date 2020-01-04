@@ -1,9 +1,8 @@
 <resources>
-    <string name="app_name">CookWithPuppy</string>
+    <string name="app_name">Cook with Puppy</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Cook with Puppy</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_about">About</string>
 
@@ -11,5 +10,11 @@
     <string name="menu_search">Search</string>
     <string name="menu_favourite">Favourites</string>
     <string name="menu_tools">Tools</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="add_new_recipe_1">Add new recipe (1)</string>
+    <string name="add_new_recipe_2">Add new recipe (2)</string>
+    <string name="list_of_ingredients">List of ingredients:</string>
+    <string name="list_of_steps">List of steps:</string>
 
 </resources>

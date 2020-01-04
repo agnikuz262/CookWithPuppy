@@ -1,4 +1,4 @@
-package com.example.cookwithpuppy.ui.myrecipe
+package com.example.cookwithpuppy.ui.myrecipes
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.cookwithpuppy.R
 
-class MyRecipeFragment : Fragment() {
+class MyRecipesFragment : Fragment() {
 
-    private lateinit var galleryViewModel: MyRecipeViewModel
+    private lateinit var myRecipesViewModel: MyRecipesViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        galleryViewModel =
-            ViewModelProviders.of(this).get(MyRecipeViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_search, container, false)
-        val textView: TextView = root.findViewById(R.id.text_gallery)
-        galleryViewModel.text.observe(this, Observer {
+        myRecipesViewModel =
+            ViewModelProviders.of(this).get(MyRecipesViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_myrecipe, container, false)
+        val textView: TextView = root.findViewById(R.id.text_home)
+        myRecipesViewModel.text.observe(this, Observer {
             textView.text = it
         })
         return root

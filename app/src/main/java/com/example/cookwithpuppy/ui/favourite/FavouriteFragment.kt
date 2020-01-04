@@ -12,18 +12,18 @@ import com.example.cookwithpuppy.R
 
 class FavouriteFragment : Fragment() {
 
-    private lateinit var slideshowViewModel: FavouriteViewModel
+    private lateinit var favouriteViewModel : FavouriteViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        slideshowViewModel =
+        favouriteViewModel =
             ViewModelProviders.of(this).get(FavouriteViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_favourite, container, false)
         val textView: TextView = root.findViewById(R.id.text_slideshow)
-        slideshowViewModel.text.observe(this, Observer {
+        favouriteViewModel.text.observe(this, Observer {
             textView.text = it
         })
         return root
