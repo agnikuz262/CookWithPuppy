@@ -16,5 +16,7 @@
     <string name="add_new_recipe_2">Add new recipe (2)</string>
     <string name="list_of_ingredients">List of ingredients:</string>
     <string name="list_of_steps">List of steps:</string>
+    <string name="label_ingredients">Ingredients:</string>
+    <string name="label_steps">Steps:</string>
 
 </resources>
