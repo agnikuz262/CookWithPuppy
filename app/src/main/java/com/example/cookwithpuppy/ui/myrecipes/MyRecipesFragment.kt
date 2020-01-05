@@ -22,7 +22,7 @@ class MyRecipesFragment : Fragment() {
         myRecipesViewModel =
             ViewModelProviders.of(this).get(MyRecipesViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_myrecipe, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
+        val textView: TextView = root.findViewById(R.id.text_myrecipe)
         myRecipesViewModel.text.observe(this, Observer {
             textView.text = it
         })

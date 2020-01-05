@@ -22,7 +22,7 @@ class FavouriteFragment : Fragment() {
         favouriteViewModel =
             ViewModelProviders.of(this).get(FavouriteViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_favourite, container, false)
-        val textView: TextView = root.findViewById(R.id.text_slideshow)
+        val textView: TextView = root.findViewById(R.id.text_favourite)
         favouriteViewModel.text.observe(this, Observer {
             textView.text = it
         })
