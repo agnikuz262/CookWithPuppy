@@ -1,4 +1,4 @@
-package com.example.cookwithpuppy.ui.add_recipe
+package com.example.cookwithpuppy.ui
 
 
 import android.os.Bundle
@@ -12,14 +12,14 @@ import com.example.cookwithpuppy.R
 /**
  * A simple [Fragment] subclass.
  */
-class StepsFragment : Fragment() {
+class AboutFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_instruction, container, false)
+        return inflater.inflate(R.layout.fragment_about, container, false)
     }
 
 

@@ -40,25 +40,25 @@
         app:layout_constraintTop_toBottomOf="@+id/label_ingredients" />
 
     <TextView
-        android:id="@+id/label_steps"
+        android:id="@+id/label_instruction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:text="@string/label_steps"
+        android:text="@string/label_instruction"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.112"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/list_ingredients" />
 
     <TextView
-        android:id="@+id/list_steps"
+        android:id="@+id/instruction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="TextView"
+        android:text="@string/instruction"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/label_steps" />
+        app:layout_constraintTop_toBottomOf="@+id/label_instruction" />
 
     <Button
         android:id="@+id/button_cancel"
@@ -69,5 +69,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/list_steps" />
+        app:layout_constraintTop_toBottomOf="@+id/instruction" />
 </androidx.constraintlayout.widget.ConstraintLayout>
