@@ -5,17 +5,18 @@
     <string name="nav_header_title">Cook with Puppy</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_about">About</string>
+    <string name="add_new_recipe">Add new recipe</string>
 
     <string name="menu_myrecipe">My recipes</string>
     <string name="menu_search">Search</string>
     <string name="menu_favourite">Favourites</string>
     <string name="menu_tools">Tools</string>
 
-
-    <string name="add_new_recipe_1">Add new recipe (1)</string>
-    <string name="add_new_recipe_2">Add new recipe (2)</string>
-    <string name="label_instruction">Instruction:</string>
-    <string name="instruction">Instruction</string>
+    <string name="add">Add</string>
+    <string name="type_ingredients">Type ingredients with comas</string>
+    <string name="label_recipe">Add recipe:</string>
+    <string name="title">Title</string>
+    <string name="type_title">Type title</string>
     <string name="label_ingredients">Ingredients:</string>
     <string name="dog">Dog icon</string>
     <string name="about_description">This application enable you to create your own recipes and search for
