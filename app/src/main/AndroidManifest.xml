@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_dog_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.add_recipe.AddRecipeActivity"></activity>
+        <activity android:name=".ui.AboutActivity"></activity>
+        <activity android:name=".ui.add_recipe.AddRecipeActivity" />
         <activity android:name=".ui.display_recipe.DisplayRecipe" />
         <activity
             android:name=".MainActivity"
