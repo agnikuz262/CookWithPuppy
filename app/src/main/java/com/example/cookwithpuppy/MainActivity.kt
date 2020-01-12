@@ -1,10 +1,11 @@
 package com.example.cookwithpuppy
 
-
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
@@ -17,10 +18,11 @@ import com.example.cookwithpuppy.ui.AboutActivity
 import com.example.cookwithpuppy.ui.add_recipe.AddRecipeActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
+import okhttp3.*
+import java.io.IOException
 
 
 class MainActivity : AppCompatActivity() {
-
 
     private lateinit var appBarConfiguration: AppBarConfiguration
 
@@ -30,11 +32,11 @@ class MainActivity : AppCompatActivity() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
+
         val fab: FloatingActionButton = findViewById(R.id.float_button_add)
         fab.setOnClickListener {
 
             val intent = Intent(this, AddRecipeActivity::class.java).apply {
-              //  putExtra("id", item.id)
                 }
             this.startActivity(intent)
 
@@ -54,6 +56,8 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
+
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.

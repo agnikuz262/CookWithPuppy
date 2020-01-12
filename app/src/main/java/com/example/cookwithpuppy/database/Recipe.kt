@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 data class Recipe(
 
     @PrimaryKey(autoGenerate = true)
-    var id: Int = 0,
+    var id: Int? = 0,
 
     @ColumnInfo(name="recipe_title")
     var title: String = "t",
