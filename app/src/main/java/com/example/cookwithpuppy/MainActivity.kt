@@ -18,6 +18,9 @@ import com.example.cookwithpuppy.ui.AboutActivity
 import com.example.cookwithpuppy.ui.add_recipe.AddRecipeActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
+import kotlinx.android.synthetic.main.content_main.*
+import kotlinx.android.synthetic.main.fragment_myrecipe.*
+import kotlinx.android.synthetic.main.fragment_search.*
 import okhttp3.*
 import java.io.IOException
 
