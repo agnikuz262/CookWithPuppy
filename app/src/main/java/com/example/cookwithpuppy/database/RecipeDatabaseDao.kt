@@ -1,20 +1,19 @@
 package com.example.cookwithpuppy.database
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 
 @Dao
 interface RecipeDatabaseDao {
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(recipe: Recipe)
+
+    @Query("SELECT * FROM recipes_table ORDER BY id DESC")
+    fun getAllRecipes(): List<Recipe>
 
     @Delete
     fun delete(recipe: Recipe)
 
-    @Query("SELECT * FROM recipes_table ORDER BY id DESC")
-    fun getAllRecipes(): LiveData<List<Recipe>>
+
 }

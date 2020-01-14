@@ -14,6 +14,6 @@ data class Recipe(
     var title: String = "t",
 
     @ColumnInfo(name="recipe_ingredients")
-    var ingredients: MutableList<String>
+    var ingredients: String = ""
 
 )

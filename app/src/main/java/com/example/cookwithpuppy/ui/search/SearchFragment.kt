@@ -42,7 +42,7 @@ class SearchFragment : Fragment() {
 
 
 
-        searchViewModel.apiConnection(typedSearch?.text.toString())
+        //searchViewModel.apiConnection(typedSearch?.text.toString())
 
         searchViewModel.text.observe(this, Observer {
             searchRecipesList.text = it

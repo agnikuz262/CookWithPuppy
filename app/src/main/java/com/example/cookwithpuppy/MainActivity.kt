@@ -14,6 +14,8 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import androidx.room.Room
+import com.example.cookwithpuppy.database.RecipeDatabase
 import com.example.cookwithpuppy.ui.AboutActivity
 import com.example.cookwithpuppy.ui.add_recipe.AddRecipeActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -34,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+
 
 
         val fab: FloatingActionButton = findViewById(R.id.float_button_add)
