@@ -9,17 +9,12 @@ import com.example.cookwithpuppy.database.Recipe
 import com.example.cookwithpuppy.database.RecipeDatabase
 
 class MyRecipesViewModel(application: Application) : AndroidViewModel(application) {
-//    private val db: RecipeDatabase = RecipeDatabase.getInstance(application)
-//
-//    internal val allRecipes: LiveData<List<Recipe>> = db.recipeDao().getAllRecipes()
-//
-//    fun insert(recipe: Recipe) {
-//        db.recipeDao().insert(recipe)
-//
-//    }
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is my recipes Fragment"
-    }
-    val text: LiveData<String> = _text
+    private val db: RecipeDatabase = RecipeDatabase.getInstance(application)
+
+
+
+    var allRecipes: LiveData<List<Recipe>> = db.recipeDao().getAllRecipes()
+
+
 }

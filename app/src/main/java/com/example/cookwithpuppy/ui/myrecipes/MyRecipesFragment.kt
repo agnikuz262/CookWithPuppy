@@ -29,26 +29,31 @@ class MyRecipesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
        return inflater.inflate(R.layout.fragment_myrecipe, container, false)
+
+
     }
+
 
     override fun onStart() {
         super.onStart()
-        
+
+        myRecipesViewModel = ViewModelProviders.of(this).get(MyRecipesViewModel::class.java)
+
+        myRecipesViewModel.allRecipes.observe(this,
+            Observer {
+
+                adapter = RecyclerViewAdapter(it,requireContext(),this)
+                recycler_myrecipes.adapter = adapter
+                recycler_myrecipes.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
+            })
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
 
         recycler_myrecipes.adapter = null
+
     }
 
-
 }
-
-//    fun setRecycle() {
-//        recycler_myrecipes.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
-//        var adapter =
-//            RecyclerViewAdapter(db.recipeDao().getAllRecipes())
-//        recycler_myrecipes.adapter = adapter
-//    }
-//}
