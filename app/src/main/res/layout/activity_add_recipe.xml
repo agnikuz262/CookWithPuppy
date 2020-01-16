@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,10 +10,10 @@
         android:id="@+id/label_ingredients"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
         android:text="@string/label_ingredients"
+        app:layout_constraintBottom_toTopOf="@+id/edit_ingredients"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_title" />
 
@@ -22,12 +21,13 @@
         android:id="@+id/edit_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/type_title"
         android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/label_ingredients"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,14 +35,14 @@
         android:id="@+id/edit_ingredients"
         android:layout_width="274dp"
         android:layout_height="60dp"
-        android:layout_marginTop="100dp"
         android:ems="10"
-        android:textAlignment="center"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:text="@string/type_ingredients"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/button_add"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/label_ingredients" />
 
@@ -50,9 +50,10 @@
         android:id="@+id/button_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
         android:text="@string/add"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_ingredients" />
 

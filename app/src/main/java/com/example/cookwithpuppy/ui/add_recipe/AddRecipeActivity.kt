@@ -18,9 +18,7 @@ class AddRecipeActivity : AppCompatActivity() {
         setTitle("Add recipe")
         setContentView(R.layout.activity_add_recipe)
 
-        val db = Room
-            .databaseBuilder(applicationContext, RecipeDatabase::class.java,"RecipeDB")
-            .build()
+        var db = RecipeDatabase.getInstance(applicationContext)
 
         button_add.setOnClickListener {
             if(edit_title.text == null || edit_ingredients.text == null)
@@ -35,9 +33,6 @@ class AddRecipeActivity : AppCompatActivity() {
 
                     db.recipeDao().insert(recipe)
 
-                    db.recipeDao().getAllRecipes().forEach {
-                        Log.e("RECIPE", "recipe: ${it.title}")
-                    }
                 }.start()
 
             }

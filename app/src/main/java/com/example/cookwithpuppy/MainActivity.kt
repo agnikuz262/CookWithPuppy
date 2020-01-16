@@ -31,28 +31,28 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-
+        createDB()
 
         val fab: FloatingActionButton = findViewById(R.id.float_button_add)
         fab.setOnClickListener {
 
-            val intent = Intent(this, AddRecipeActivity::class.java).apply {
-                }
+            val intent = Intent(this, AddRecipeActivity::class.java).apply {}
             this.startActivity(intent)
 
-            }
+        }
 
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_myrecipe, R.id.nav_search, R.id.nav_favourite,
@@ -87,5 +87,11 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    fun createDB() {
+        val db = Room
+            .databaseBuilder(applicationContext, RecipeDatabase::class.java,"RecipeDB")
+            .build()
     }
 }

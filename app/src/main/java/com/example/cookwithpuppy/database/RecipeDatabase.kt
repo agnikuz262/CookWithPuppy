@@ -11,27 +11,28 @@ import androidx.room.TypeConverters
 abstract class RecipeDatabase : RoomDatabase() {
     abstract fun recipeDao(): RecipeDatabaseDao
 
-  //  abstract val recipeDatabaseDao: RecipeDatabaseDao
-//    companion object {
-//
-//        @Volatile
-//        private var INSTANCE: RecipeDatabase? = null
-//
-//        fun getInstance(context: Context): RecipeDatabase {
-//            synchronized(this) {
-//                var instance = INSTANCE
-//
-//                if (instance == null) {
-//                    instance = Room.databaseBuilder(
-//                        context.applicationContext,
-//                        RecipeDatabase::class.java,
-//                        "recipes_history_database"
-//                    )
-//                        .fallbackToDestructiveMigration()
-//                        .build()
-//                    INSTANCE = instance
-//                }
-//                return instance
-//            }
-//        }
+    //  abstract val recipeDatabaseDao: RecipeDatabaseDao
+    companion object {
+
+        @Volatile
+        private var INSTANCE: RecipeDatabase? = null
+
+        fun getInstance(context: Context): RecipeDatabase {
+            synchronized(this) {
+                var instance = INSTANCE
+
+                if (instance == null) {
+                    instance = Room.databaseBuilder(
+                        context.applicationContext,
+                        RecipeDatabase::class.java,
+                        "recipes_history_database"
+                    )
+                        .fallbackToDestructiveMigration()
+                        .build()
+                    INSTANCE = instance
+                }
+                return instance
+            }
+        }
     }
+}

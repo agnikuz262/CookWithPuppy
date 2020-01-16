@@ -1,15 +1,18 @@
-package com.example.cookwithpuppy
+package com.example.cookwithpuppy.recycler
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.lifecycle.MutableLiveData
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.cookwithpuppy.R
 import com.example.cookwithpuppy.database.Recipe
-import kotlinx.android.synthetic.main.recipe_data_in_recycle.view.*
 
-class RecyclerViewAdapter(val recipes: List<Recipe>)
-    : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>(){
+class RecyclerViewAdapter(val event: MutableLiveData<RecipeListEvent> =
+    MutableLiveData()): ListAdapter<Recipe, RecyclerViewAdapter.ViewHolder>(RecipeDiffUtilCallback())
+{
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v: View = LayoutInflater.from(parent.context)
@@ -19,19 +22,14 @@ class RecyclerViewAdapter(val recipes: List<Recipe>)
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        holder.title.text = recipes[position].title
-    }
+        getItem(position).let { recipe ->
+            holder.title.text = recipe.title
 
-    override fun getItemCount(): Int {
-        return recipes.size
-    }
 
-    override fun getItemId(position: Int): Long {
-        return super.getItemId(position)
-    }
-
-    override fun getItemViewType(position: Int): Int {
-        return super.getItemViewType(position)
+            holder.itemView.setOnClickListener {
+                event.value = RecipeListEvent.OnRecipeItemClick(position)
+            }
+        }
     }
 
     class ViewHolder(itemView:View): RecyclerView.ViewHolder(itemView){
