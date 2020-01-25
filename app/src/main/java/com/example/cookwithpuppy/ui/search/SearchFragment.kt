@@ -32,25 +32,19 @@ class SearchFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        searchViewModel =
-            ViewModelProviders.of(this).get(SearchViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_search, container, false)
 
-        val searchRecipesList: TextView = root.findViewById(R.id.list_searched_recipes)
+        searchViewModel = SearchViewModel()
 
-        val typedSearch: EditText? = root.findViewById(R.id.search_title)
+        return inflater.inflate(R.layout.fragment_search, container, false)
 
-
-
-        //searchViewModel.apiConnection(typedSearch?.text.toString())
-
-        searchViewModel.text.observe(this, Observer {
-            searchRecipesList.text = it
-        })
-
-
-        return root
     }
 
+    override fun onStart() {
+        super.onStart()
+
+
+       // searchViewModel.apiConnection(search_title?.text.toString())
+
+    }
 
     }

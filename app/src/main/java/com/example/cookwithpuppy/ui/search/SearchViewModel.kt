@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.cookwithpuppy.json.FoundRecipe
 import com.example.cookwithpuppy.json.FoundRecipesList
 import com.google.gson.Gson
 import okhttp3.*
@@ -11,13 +12,12 @@ import java.io.IOException
 
 class SearchViewModel : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is search Fragment"
-    }
-    val text: LiveData<String> = _text
+    private var newList = FoundRecipesList()
+    //private var searchRecipesList : LiveData<List<FoundRecipe>>? = newList.listItems!!
 
 
     //API
+    /*
     fun apiConnection(typedSearch: String) {
 
         var tableSearch = typedSearch.split(" ".toRegex())
@@ -48,10 +48,11 @@ class SearchViewModel : ViewModel() {
 
                 @Throws(IOException::class)
                 override fun onResponse(call: Call?, response: Response) {
-                    val myResponse: String = response.body().string()
+                    val myResponse = response.body().string()
                     //Log.e("Response:", myResponse)
                     var gson = Gson()
                     val data = gson.fromJson(myResponse, FoundRecipesList::class.java)
+                    searchRecipesList = data
                     for (i in 0 until (data.listItems?.size ?: 9) - 1)
                         println(data.listItems?.get(i)?.title)
 
@@ -62,4 +63,6 @@ class SearchViewModel : ViewModel() {
             e.printStackTrace()
         }
     }
+
+*/
 }

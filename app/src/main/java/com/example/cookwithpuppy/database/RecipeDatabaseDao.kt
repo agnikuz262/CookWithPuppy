@@ -13,6 +13,9 @@ interface RecipeDatabaseDao {
     @Query("SELECT * FROM recipes_table ORDER BY id DESC")
     fun getAllRecipes(): LiveData<List<Recipe>>
 
+    @Query("SELECT * FROM recipes_table WHERE id=:id")
+    fun getRecipe(id: Int) : Recipe
+
     @Delete
     fun delete(recipe: Recipe)
 

@@ -19,6 +19,7 @@
     <string name="title">Title</string>
     <string name="type_title">Type title</string>
     <string name="label_ingredients">Ingredients:</string>
+    <string name="label_href">Website:</string>
     <string name="dog">Dog icon</string>
     <string name="about_description">This application enable you to create your own recipes and search for
     new ones. You can add them to Favourites and enjoy whenever you want.</string>
