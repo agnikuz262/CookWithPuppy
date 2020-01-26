@@ -9,14 +9,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="@color/recipe_background"
         android:id="@+id/singe_recipe">
         <TextView
             android:id="@+id/recipe_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FFFFFF"
             android:padding="10dp"
-
+            android:layout_marginBottom="4dp"
             android:textColor="#3d3345"
             android:textAlignment="center"
             android:textSize="20sp" />

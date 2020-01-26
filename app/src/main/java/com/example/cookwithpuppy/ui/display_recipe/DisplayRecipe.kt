@@ -1,15 +1,18 @@
 package com.example.cookwithpuppy.ui.display_recipe
 
+import android.content.Context
 import android.os.AsyncTask
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.annotation.MainThread
+import androidx.appcompat.app.AppCompatActivity
+import com.example.cookwithpuppy.MainActivity
 import com.example.cookwithpuppy.R
 import com.example.cookwithpuppy.database.Recipe
 import com.example.cookwithpuppy.database.RecipeDatabase
 import kotlinx.android.synthetic.main.activity_display_recipe.*
-import java.lang.Exception
+
 
 class DisplayRecipe : AppCompatActivity() {
 
@@ -23,20 +26,18 @@ class DisplayRecipe : AppCompatActivity() {
                 val id = intent.getIntExtra("id", -1)
                 recipe = db.recipeDao().getRecipe(id)
                 db.recipeDao().deleteRecipe(recipe)
+                Toast.makeText(applicationContext,"lala",Toast.LENGTH_SHORT)
             }catch (e: Exception) {
                 Log.e("Error", e.localizedMessage)
             }
             return "Recipe deleted"
         }
 
-
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display_recipe)
-
-
 
         Thread {
             val db = RecipeDatabase.getInstance(applicationContext)
@@ -54,8 +55,7 @@ class DisplayRecipe : AppCompatActivity() {
         }
 
         button_delete.setOnClickListener {
-            val deleteTask = DeleteTask().execute()
-            Toast.makeText(this,"Recipe deleted",Toast.LENGTH_SHORT)
+            DeleteTask().execute()
             this.finish()
         }
 

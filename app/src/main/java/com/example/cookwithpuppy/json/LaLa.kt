@@ -4,7 +4,10 @@ package com.example.cookwithpuppy.json
 import com.google.gson.annotations.SerializedName
 
 
-data class Response(
+data class LaLa(
+
+	@field:SerializedName("href")
+	val href: String? = null,
 
 	@field:SerializedName("title")
 	val title: String? = null,
@@ -12,9 +15,6 @@ data class Response(
 	@field:SerializedName("version")
 	val version: Double? = null,
 
-	@field:SerializedName("href")
-	val href: String? = null,
-
 	@field:SerializedName("results")
-	val results: List<FoundRecipe?>? = null
+	val results: List<ResultsItem?>? = null
 )

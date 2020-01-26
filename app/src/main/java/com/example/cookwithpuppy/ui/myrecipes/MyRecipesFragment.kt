@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.cookwithpuppy.MainActivity
 import com.example.cookwithpuppy.R
 import com.example.cookwithpuppy.adapters.MyRecipesListAdapter
 import kotlinx.android.synthetic.main.fragment_myrecipe.*
@@ -31,14 +32,11 @@ class MyRecipesFragment : Fragment() {
 
        return inflater.inflate(R.layout.fragment_myrecipe, container, false)
 
-
     }
 
 
     override fun onStart() {
         super.onStart()
-
-
 
         myRecipesViewModel.allRecipes.observe(this,
             Observer {

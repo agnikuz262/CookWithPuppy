@@ -42,8 +42,8 @@ class SearchFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
-
-       // searchViewModel.apiConnection(search_title?.text.toString())
+       var response = searchViewModel.apiConnection(search_title?.text.toString())
+//        println(response.listItems)
 
     }
 
