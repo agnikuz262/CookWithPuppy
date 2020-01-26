@@ -34,7 +34,7 @@ class AddRecipeActivity : AppCompatActivity() {
                     db.recipeDao().insert(recipe)
 
                 }.start()
-
+                this.finish()
             }
 
 

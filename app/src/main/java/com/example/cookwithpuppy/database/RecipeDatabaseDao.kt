@@ -17,7 +17,7 @@ interface RecipeDatabaseDao {
     fun getRecipe(id: Int) : Recipe
 
     @Delete
-    fun delete(recipe: Recipe)
+    fun deleteRecipe(recipe: Recipe)
 
 
 }
