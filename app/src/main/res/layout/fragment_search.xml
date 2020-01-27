@@ -21,16 +21,18 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_search"
-        android:layout_width="409dp"
-        android:layout_height="639dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="610dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+        app:layout_constraintTop_toBottomOf="@+id/button_search"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/button_search"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:contentDescription="@string/search"

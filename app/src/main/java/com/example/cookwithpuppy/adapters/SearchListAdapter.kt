@@ -8,9 +8,10 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cookwithpuppy.R
-import com.example.cookwithpuppy.database.Recipe
+import com.example.cookwithpuppy.json.ResultRecipe
 
-class SearchListAdapter(val recipes: List<Recipe>,
+
+class SearchListAdapter(val recipes: List<ResultRecipe?>?,
                            val context: Context,
                            val fragment: Fragment)
     : RecyclerView.Adapter<SearchListAdapter.ViewHolder>()
@@ -22,7 +23,7 @@ class SearchListAdapter(val recipes: List<Recipe>,
         return ViewHolder(v)
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val recipe = recipes[position]
+        val recipe = recipes!![position]!!
         holder.title.text = recipe.title
     }
 
@@ -32,7 +33,7 @@ class SearchListAdapter(val recipes: List<Recipe>,
     }
 
     override fun getItemCount(): Int {
-        return recipes.size
+        return if (recipes == null) 0 else recipes.size
     }
 
 

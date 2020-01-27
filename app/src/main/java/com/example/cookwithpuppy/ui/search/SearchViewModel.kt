@@ -1,30 +1,29 @@
 package com.example.cookwithpuppy.ui.search
 
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.cookwithpuppy.database.Recipe
-import com.example.cookwithpuppy.json.FoundRecipe
-import com.example.cookwithpuppy.json.FoundRecipesList
-import com.example.cookwithpuppy.json.LaLa
+import com.example.cookwithpuppy.json.ResultRecipesList
+import com.example.cookwithpuppy.json.Result
 import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import okhttp3.*
 import java.io.IOException
 
 class SearchViewModel : ViewModel() {
 
-    private var searchedRecipesList = FoundRecipesList()
+    companion object {
+        private var searchedRecipesList = ResultRecipesList()
+    }
 
     //API
-    fun apiConnection(typedSearch: String) /*: FoundRecipesList*/ {
+    fun apiConnection(typedSearch: String) : ResultRecipesList {
 
         var tableSearch = typedSearch.split(" ".toRegex())
 
         var url =  "https://recipe-puppy.p.rapidapi.com/?p=1&q="
         for(i in 0 until tableSearch.size-1)
             url += tableSearch[i] + "%20"
-        url += tableSearch[tableSearch.size-1]
+            url += tableSearch[tableSearch.size-1]
 
 
         try {
@@ -44,19 +43,18 @@ class SearchViewModel : ViewModel() {
 
                 @Throws(IOException::class)
                 override fun onResponse(call: Call?, response: Response) {
-                    val myResponse = response.body().toString()
+                    val myResponse = response.body()?.string()
                     var gson = Gson()
-                    val data = gson.fromJson(myResponse, LaLa::class.java)
-                    //searchedRecipesList = data
+                    val data = gson.fromJson(myResponse, Result::class.java)
+                    searchedRecipesList.listItems = data.results
                 }
-
             })
 
         } catch (e: IOException) {
             e.printStackTrace()
         }
 
-//        return searchedRecipesList!!
+        return searchedRecipesList
     }
 
 }

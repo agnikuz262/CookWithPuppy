@@ -20,11 +20,7 @@ import com.example.cookwithpuppy.ui.AboutActivity
 import com.example.cookwithpuppy.ui.add_recipe.AddRecipeActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
-import kotlinx.android.synthetic.main.content_main.*
-import kotlinx.android.synthetic.main.fragment_myrecipe.*
-import kotlinx.android.synthetic.main.fragment_search.*
-import okhttp3.*
-import java.io.IOException
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -39,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        createDB()
+        //createDB()
 
         val fab: FloatingActionButton = findViewById(R.id.float_button_add)
         fab.setOnClickListener {
@@ -48,6 +44,7 @@ class MainActivity : AppCompatActivity() {
             this.startActivity(intent)
 
         }
+
 
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)

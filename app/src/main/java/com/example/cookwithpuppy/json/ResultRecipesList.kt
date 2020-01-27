@@ -1,9 +1,8 @@
 package com.example.cookwithpuppy.json
 
-import androidx.lifecycle.LiveData
 import com.google.gson.annotations.SerializedName
 
-class FoundRecipesList {
+class ResultRecipesList {
     @SerializedName("results")
-    var listItems: LiveData<List<FoundRecipe>>? = null
+    var listItems: List<ResultRecipe?>? = null
 }

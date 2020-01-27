@@ -1,8 +1,10 @@
 package com.example.cookwithpuppy.json
 
+
 import com.google.gson.annotations.SerializedName
 
-data class ResultsItem(
+
+data class ResultRecipe(
 
 	@field:SerializedName("thumbnail")
 	val thumbnail: String? = null,
