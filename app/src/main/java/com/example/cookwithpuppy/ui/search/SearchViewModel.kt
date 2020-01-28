@@ -44,7 +44,7 @@ class SearchViewModel : ViewModel() {
                 @Throws(IOException::class)
                 override fun onResponse(call: Call?, response: Response) {
                     val myResponse = response.body()?.string()
-                    var gson = Gson()
+                    val gson = Gson()
                     val data = gson.fromJson(myResponse, Result::class.java)
                     searchedRecipesList.listItems = data.results
                 }

@@ -39,9 +39,8 @@ class SearchListAdapter(val recipes: List<ResultRecipe?>?,
             //add to db
             Thread {
                 val db = RecipeDatabase.getInstance(context)
-                val insertRecipe = Recipe()
-                insertRecipe.title = recipe.title!!
-                insertRecipe.ingredients = recipe.ingredients!!
+
+                val insertRecipe = Recipe(null, recipe.title!!, recipe.ingredients!!)
                 db.recipeDao().insert(insertRecipe)
 
             }.start()

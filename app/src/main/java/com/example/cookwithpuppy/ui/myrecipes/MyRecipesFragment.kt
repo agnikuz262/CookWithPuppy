@@ -47,9 +47,6 @@ class MyRecipesFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
-
-
-
         myRecipesViewModel.allRecipes.observe(this,
             Observer {
 
