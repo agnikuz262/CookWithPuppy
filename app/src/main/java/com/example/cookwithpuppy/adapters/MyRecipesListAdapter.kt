@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.cookwithpuppy.MainActivity
 import com.example.cookwithpuppy.R
 import com.example.cookwithpuppy.database.Recipe
-import com.example.cookwithpuppy.ui.display_recipe.DisplayRecipe
+import com.example.cookwithpuppy.ui.display_recipe.DisplayMyRecipe
 
 class MyRecipesListAdapter(val recipes: List<Recipe>,
                            val context: Context,
@@ -32,7 +32,7 @@ class MyRecipesListAdapter(val recipes: List<Recipe>,
         holder.title.text = recipe.title
 
         holder.singleRecipe.setOnClickListener {
-            val intent = Intent(context, DisplayRecipe::class.java).apply {
+            val intent = Intent(context, DisplayMyRecipe::class.java).apply {
                 putExtra("id", recipe.id) }
             (context as MainActivity).startActivity(intent)
         }

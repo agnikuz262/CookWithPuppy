@@ -14,7 +14,7 @@ import com.example.cookwithpuppy.database.RecipeDatabase
 import kotlinx.android.synthetic.main.activity_display_recipe.*
 
 
-class DisplayRecipe : AppCompatActivity() {
+class DisplayMyRecipe : AppCompatActivity() {
 
     private lateinit var recipe : Recipe
 
@@ -26,7 +26,6 @@ class DisplayRecipe : AppCompatActivity() {
                 val id = intent.getIntExtra("id", -1)
                 recipe = db.recipeDao().getRecipe(id)
                 db.recipeDao().deleteRecipe(recipe)
-                Toast.makeText(applicationContext,"lala",Toast.LENGTH_SHORT)
             }catch (e: Exception) {
                 Log.e("Error", e.localizedMessage)
             }

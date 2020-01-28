@@ -34,7 +34,6 @@ class MyRecipesFragment : Fragment() {
 
     }
 
-
     override fun onStart() {
         super.onStart()
 
