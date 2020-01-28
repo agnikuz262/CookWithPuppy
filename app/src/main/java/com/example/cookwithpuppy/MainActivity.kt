@@ -35,15 +35,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         createDB()
-        val fab : FloatingActionButton = findViewById(R.id.float_button_add)
-
-
-        fab.setOnClickListener {
-
-            val intent = Intent(this, AddRecipeActivity::class.java).apply {}
-            this.startActivity(intent)
-
-        }
+        
 
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
@@ -62,7 +54,6 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
         return true
     }
