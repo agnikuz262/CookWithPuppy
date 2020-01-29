@@ -5,10 +5,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.LinearLayout
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cookwithpuppy.MainActivity
@@ -64,7 +61,7 @@ class SearchListAdapter(val recipes: List<ResultRecipe?>?,
 
     class ViewHolder(itemView:View): RecyclerView.ViewHolder(itemView){
         val title = itemView.findViewById<TextView>(R.id.recipe_title)
-        val buttonAdd = itemView.findViewById<Button>(R.id.button_add_to_myrecipe)
+        val buttonAdd = itemView.findViewById<ImageButton>(R.id.button_add_to_myrecipe)
         val singleRecipe = itemView.findViewById<LinearLayout>(R.id.singe_recipe)
     }
 

@@ -9,13 +9,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:orientation="horizontal"
+        android:gravity="center"
         android:background="@color/recipe_background"
         android:id="@+id/singe_recipe">
 
         <TextView
             android:id="@+id/recipe_title"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="4"
             android:layout_height="70dp"
             android:layout_marginBottom="4dp"
             android:padding="10dp"
@@ -23,6 +25,16 @@
             android:textAlignment="center"
             android:textColor="#3d3345"
             android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/favorite_button"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@color/recipe_background"
+            android:contentDescription="@string/add_button"
+            android:gravity="center"
+            android:src="@drawable/star" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

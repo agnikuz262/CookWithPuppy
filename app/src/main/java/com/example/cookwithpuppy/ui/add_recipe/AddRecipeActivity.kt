@@ -15,7 +15,7 @@ class AddRecipeActivity : AppCompatActivity() {
         setTitle("Add recipe")
         setContentView(R.layout.activity_add_recipe)
 
-        var db = RecipeDatabase.getInstance(applicationContext)
+        val db = RecipeDatabase.getInstance(applicationContext)
 
         button_add.setOnClickListener {
             if(edit_title.text.toString() == "" || edit_ingredients.text.toString() == "")
@@ -24,15 +24,7 @@ class AddRecipeActivity : AppCompatActivity() {
                 Thread {
                     val title = edit_title.text.toString()
                     val ingredients = edit_ingredients.text.toString()
-
-
-                    val recipe =
-                        Recipe(
-                            null,
-                            title,
-                            ingredients
-                        )
-
+                    val recipe = Recipe(null, title, ingredients, null, 0)
                     db.recipeDao().insert(recipe)
 
                 }.start()

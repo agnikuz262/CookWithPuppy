@@ -9,11 +9,13 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:contentDescription="@string/dog"
-        android:layout_width="135dp"
-        android:layout_height="124dp"
+        android:layout_width="167dp"
+        android:layout_height="167dp"
         android:layout_marginTop="44dp"
-        android:src="@mipmap/ic_dog"
+        android:background="#868686"
+        android:padding="1dp"
+        android:contentDescription="@string/dog"
+        android:src="@mipmap/ic_launcher"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

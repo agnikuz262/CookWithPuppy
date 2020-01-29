@@ -16,6 +16,9 @@ interface RecipeDatabaseDao {
     @Query("SELECT * FROM recipes_table WHERE id=:id")
     fun getRecipe(id: Int) : Recipe
 
+    @Update
+    fun update(recipe: Recipe)
+
     @Delete
     fun deleteRecipe(recipe: Recipe)
 

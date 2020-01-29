@@ -44,7 +44,7 @@ class SearchFragment : Fragment() {
 //            Thread.sleep(1000)
                 var list = mutableListOf<ResultRecipe>()
                 val recipe1 = ResultRecipe("", "hehe,lolo", "website", "Leczo")
-                val recipe2 = ResultRecipe("", "hihihi", "web", "Coliflower soup")
+                val recipe2 = ResultRecipe("", "hihihi", "web", "Dupa blada")
                 list.add(recipe1)
                 list.add(recipe2)
 

@@ -14,6 +14,11 @@ data class Recipe(
     var title: String = "t",
 
     @ColumnInfo(name="recipe_ingredients")
-    var ingredients: String = ""
+    var ingredients: String = "",
 
+    @ColumnInfo(name="recipe_href")
+    var href: String? = "",
+
+    @ColumnInfo(name="recipe_isFavourite")
+    var isFavourite: Int = 0
 )
