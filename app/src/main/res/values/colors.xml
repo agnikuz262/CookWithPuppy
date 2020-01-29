@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#EB4C6F5C</color>
-    <color name="colorPrimaryDark">#5B865C</color>
-    <color name="colorAccent">#8C2E91</color>
-    <color name="recipe_background">#FDF7F4E9</color>
+    <color name="colorPrimary">#EB305A43</color>
+    <color name="colorPrimaryDark">#3B6D51</color>
+    <color name="colorAccent">#FF5D24</color>
+    <color name="recipe_background">#FDFDFDF9</color>
 
 </resources>

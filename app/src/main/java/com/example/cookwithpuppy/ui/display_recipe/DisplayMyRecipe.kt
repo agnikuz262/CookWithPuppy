@@ -47,9 +47,6 @@ class DisplayMyRecipe : AppCompatActivity() {
 
         }.start()
 
-        button_cancel.setOnClickListener {
-            this.finish()
-        }
 
         button_delete.setOnClickListener {
 
