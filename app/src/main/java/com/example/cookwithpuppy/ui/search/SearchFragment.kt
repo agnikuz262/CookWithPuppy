@@ -43,8 +43,8 @@ class SearchFragment : Fragment() {
 //           val response = searchViewModel.getDataFromAPI(search_title?.text.toString())
 //            Thread.sleep(1000)
                 var list = mutableListOf<ResultRecipe>()
-                val recipe1 = ResultRecipe("", "hehe,lolo", "website", "Leczo")
-                val recipe2 = ResultRecipe("", "hihihi", "web", "Dupa blada")
+                val recipe1 = ResultRecipe("", "hehe,lolo", "https://www.facebook.com", "Leczo")
+                val recipe2 = ResultRecipe("", "hihihi", "https://www.google.co.in", "Dupa blada")
                 list.add(recipe1)
                 list.add(recipe2)
 

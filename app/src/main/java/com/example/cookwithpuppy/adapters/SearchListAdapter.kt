@@ -38,10 +38,7 @@ class SearchListAdapter(val recipes: List<ResultRecipe?>?,
 
                 val insertRecipe =
                     Recipe(
-                        null,
-                        recipe.title!!,
-                        recipe.ingredients!!
-                    )
+                        null, recipe.title!!, recipe.ingredients!!, recipe.href)
                 db.recipeDao().insert(insertRecipe)
 
             }.start()
@@ -49,12 +46,12 @@ class SearchListAdapter(val recipes: List<ResultRecipe?>?,
         }
 
         holder.singleRecipe.setOnClickListener {
-            val intent = Intent(context, DisplaySearchRecipe::class.java).apply {
+            val int = Intent(context, DisplaySearchRecipe::class.java).apply {
                putExtra("title", recipe.title)
                putExtra("ingredients", recipe.ingredients)
                putExtra("href", recipe.href)
                 }
-            (context as MainActivity).startActivity(intent)
+            (context as MainActivity).startActivity(int)
               }
     }
 

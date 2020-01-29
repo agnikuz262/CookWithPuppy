@@ -42,8 +42,9 @@ class DisplayMyRecipe : AppCompatActivity() {
             val id = intent.getIntExtra("id", -1)
             recipe = db.recipeDao().getRecipe(id)
 
-            label_title.text = recipe.title
-            list_ingredients.text = recipe.ingredients
+            label_title.setText(recipe.title)
+            list_ingredients.setText(recipe.ingredients)
+            href.setText(recipe.href)
 
         }.start()
 
@@ -66,6 +67,24 @@ class DisplayMyRecipe : AppCompatActivity() {
             deleteAlert.show()
 
 
+        }
+
+        button_update.setOnClickListener {
+
+            Thread {
+                val db = RecipeDatabase.getInstance(applicationContext)
+
+                val id = intent.getIntExtra("id", -1)
+                recipe = db.recipeDao().getRecipe(id)
+                recipe.title = label_title.text.toString()
+                recipe.ingredients = list_ingredients.text.toString()
+                recipe.href = href.text.toString()
+                db.recipeDao().update(recipe)
+
+            }.start()
+
+            Toast.makeText(applicationContext,
+                "Recipe updated", Toast.LENGTH_SHORT).show()
         }
 
 

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.display_recipe.DisplayMyRecipe">
 
-    <TextView
+    <EditText
         android:id="@+id/label_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/label_title" />
 
-    <TextView
+    <EditText
         android:id="@+id/list_ingredients"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/label_ingredients" />
 
-    <TextView
+    <EditText
         android:id="@+id/href"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -57,6 +57,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:text="@string/no_href"
+        android:textSize="16sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.42"
@@ -67,9 +68,21 @@
         android:id="@+id/button_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:text="@string/delete"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/href" />
+
+    <Button
+        android:id="@+id/button_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:text="@string/update"
+        app:layout_constraintEnd_toStartOf="@+id/button_delete"
         app:layout_constraintTop_toBottomOf="@+id/href" />
 </androidx.constraintlayout.widget.ConstraintLayout>

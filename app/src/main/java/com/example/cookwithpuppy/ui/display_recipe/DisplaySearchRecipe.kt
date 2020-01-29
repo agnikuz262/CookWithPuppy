@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.cookwithpuppy.R
 import kotlinx.android.synthetic.main.activity_display_recipe.*
+import kotlinx.android.synthetic.main.activity_display_search_recipe.*
 
 class DisplaySearchRecipe : AppCompatActivity() {
 
@@ -15,9 +16,8 @@ class DisplaySearchRecipe : AppCompatActivity() {
         val recipeIngredients = intent.getStringExtra("ingredients")
         val recipeHref = intent.getStringExtra("href")
 
-
-        label_title.text = recipeTitle
-        list_ingredients.text = recipeIngredients
-        href.text = recipeHref
+        lab_title.text = recipeTitle
+        li_ingredients.text = recipeIngredients
+        hr.text = recipeHref
     }
 }
