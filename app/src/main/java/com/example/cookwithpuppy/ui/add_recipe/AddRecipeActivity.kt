@@ -18,7 +18,7 @@ class AddRecipeActivity : AppCompatActivity() {
         var db = RecipeDatabase.getInstance(applicationContext)
 
         button_add.setOnClickListener {
-            if(edit_title.text == null || edit_ingredients.text == null)
+            if(edit_title.text.toString() == "" || edit_ingredients.text.toString() == "")
                 Toast.makeText(this, "Fill the data!", Toast.LENGTH_SHORT).show()
             else {
                 Thread {

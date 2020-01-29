@@ -3,6 +3,6 @@
     <color name="colorPrimary">#EB305A43</color>
     <color name="colorPrimaryDark">#3B6D51</color>
     <color name="colorAccent">#FF5D24</color>
-    <color name="recipe_background">#FDFDFDF9</color>
+    <color name="recipe_background">#FFFFFF</color>
 
 </resources>

@@ -3,25 +3,24 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:layout_margin="3dp"
     android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:gravity="center"
         android:background="@color/recipe_background"
         android:id="@+id/singe_recipe">
-
 
         <TextView
             android:id="@+id/recipe_title"
             android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:padding="10dp"
-            android:layout_marginBottom="4dp"
-            android:layout_marginTop="4dp"
-            android:textColor="#3d3345"
+            android:gravity="center"
             android:textAlignment="center"
             android:textSize="20sp" />
 
@@ -29,9 +28,9 @@
             android:id="@+id/button_add_to_myrecipe"
             android:layout_weight="3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Add to My recipes" />
-
+            android:layout_height="60dp"
+            android:textSize="12sp"
+            android:text="@string/add_button" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>
