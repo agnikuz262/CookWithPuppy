@@ -16,6 +16,9 @@ interface RecipeDatabaseDao {
     @Query("SELECT * FROM recipes_table WHERE id=:id")
     fun getRecipe(id: Int) : Recipe
 
+    @Query("SELECT * FROM recipes_table WHERE recipe_isFavourite=1")
+    fun getFavourites(): LiveData<List<Recipe>>
+
     @Update
     fun update(recipe: Recipe)
 

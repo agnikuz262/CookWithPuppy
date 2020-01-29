@@ -1,13 +1,15 @@
 package com.example.cookwithpuppy.ui.favourite
 
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.cookwithpuppy.model.database.database.Recipe
+import com.example.cookwithpuppy.model.database.database.RecipeDatabase
 
-class FavouriteViewModel : ViewModel() {
+class FavouriteViewModel(application: Application) : AndroidViewModel(application){
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is favourite Fragment"
-    }
-    val text: LiveData<String> = _text
+    private val db: RecipeDatabase = RecipeDatabase.getInstance(application)
+    var favouriteRecipes: LiveData<List<Recipe>> = db.recipeDao().getFavourites()
 }

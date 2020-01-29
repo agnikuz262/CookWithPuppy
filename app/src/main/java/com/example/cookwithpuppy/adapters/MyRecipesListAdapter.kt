@@ -39,9 +39,11 @@ class MyRecipesListAdapter(val recipes: List<Recipe>,
         val recipe = recipes[position]
         holder.title.text = recipe.title
         when (recipe.isFavourite) {
-            1 -> { holder.buttonFavourite.setImageDrawable(context.getDrawable(R.drawable.ic_star_clicked))
+            1 -> {
+                holder.buttonFavourite.setImageDrawable(context.getDrawable(R.drawable.ic_star_clicked))
             }
             else -> {
+                holder.buttonFavourite.setImageDrawable(context.getDrawable(R.drawable.ic_star_unclicked))
             }
         }
         holder.singleRecipe.setOnClickListener {
@@ -53,13 +55,18 @@ class MyRecipesListAdapter(val recipes: List<Recipe>,
         holder.buttonFavourite.setOnClickListener {
 
             Thread {
-
                 val db = RecipeDatabase.getInstance(context)
-                recipe.isFavourite = 1
+                if(recipe.isFavourite == 0)
+                    recipe.isFavourite = 1
+                else if(recipe.isFavourite == 1)
+                    recipe.isFavourite = 0
                 db.recipeDao().update(recipe)
-
             }.start()
-            Toast.makeText(context, "Recipe added to Favourites", Toast.LENGTH_SHORT).show()
+
+            if(recipe.isFavourite == 0)
+                Toast.makeText(context, "Recipe added to Favourites", Toast.LENGTH_SHORT).show()
+            else if(recipe.isFavourite == 1)
+                Toast.makeText(context, "Recipe removed from Favourites", Toast.LENGTH_SHORT).show()
         }
     }
 
