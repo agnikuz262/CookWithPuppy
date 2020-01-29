@@ -17,14 +17,16 @@
         <TextView
             android:id="@+id/recipe_title"
             android:layout_width="0dp"
-            android:layout_weight="4"
             android:layout_height="70dp"
+            android:layout_gravity="start"
             android:layout_marginBottom="4dp"
+            android:layout_weight="4"
+            android:gravity="center|start|left"
             android:padding="10dp"
-            android:gravity="center"
-            android:textAlignment="center"
+            android:textAlignment="textStart"
             android:textColor="#3d3345"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            />
 
         <ImageButton
             android:id="@+id/favorite_button"
@@ -34,7 +36,8 @@
             android:background="@color/recipe_background"
             android:contentDescription="@string/add_button"
             android:gravity="center"
-            android:src="@drawable/star" />
+            android:src="@drawable/star"
+            />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>
