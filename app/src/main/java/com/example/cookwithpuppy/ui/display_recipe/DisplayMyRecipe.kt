@@ -1,13 +1,11 @@
 package com.example.cookwithpuppy.ui.display_recipe
 
-import android.content.Context
 import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import androidx.annotation.MainThread
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.example.cookwithpuppy.MainActivity
 import com.example.cookwithpuppy.R
 import com.example.cookwithpuppy.database.Recipe
 import com.example.cookwithpuppy.database.RecipeDatabase
@@ -54,8 +52,24 @@ class DisplayMyRecipe : AppCompatActivity() {
         }
 
         button_delete.setOnClickListener {
-            DeleteTask().execute()
-            this.finish()
+
+            val deleteAlert = AlertDialog.Builder(this)
+            deleteAlert.setTitle("Delete recipe")
+            deleteAlert.setMessage("Are you sure to delete this recipe?")
+
+            deleteAlert.setPositiveButton(android.R.string.yes) { dialog, which ->
+                DeleteTask().execute()
+                Toast.makeText(applicationContext,
+                    "Recipe deleted", Toast.LENGTH_SHORT).show()
+                this.finish()
+            }
+
+            deleteAlert.setNegativeButton("Cancel") { dialog, which ->
+                           }
+
+            deleteAlert.show()
+
+
         }
 
 
