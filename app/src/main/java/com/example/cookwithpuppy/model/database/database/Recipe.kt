@@ -1,4 +1,4 @@
-package com.example.cookwithpuppy.database
+package com.example.cookwithpuppy.model.database.database
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

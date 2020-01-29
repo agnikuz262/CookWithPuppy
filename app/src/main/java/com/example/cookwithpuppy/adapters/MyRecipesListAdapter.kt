@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cookwithpuppy.MainActivity
 import com.example.cookwithpuppy.R
-import com.example.cookwithpuppy.database.Recipe
+import com.example.cookwithpuppy.model.database.database.Recipe
 import com.example.cookwithpuppy.ui.display_recipe.DisplayMyRecipe
 
 class MyRecipesListAdapter(val recipes: List<Recipe>,

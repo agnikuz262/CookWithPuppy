@@ -1,10 +1,9 @@
-package com.example.cookwithpuppy.database
+package com.example.cookwithpuppy.model.database.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import androidx.room.TypeConverters
 
 
 @Database(entities = [Recipe::class], version = 1, exportSchema = false)
@@ -19,7 +18,8 @@ abstract class RecipeDatabase : RoomDatabase() {
 
         fun getInstance(context: Context): RecipeDatabase {
             synchronized(this) {
-                var instance = INSTANCE
+                var instance =
+                    INSTANCE
 
                 if (instance == null) {
                     instance = Room.databaseBuilder(

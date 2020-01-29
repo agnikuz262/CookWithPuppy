@@ -7,8 +7,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.cookwithpuppy.R
-import com.example.cookwithpuppy.database.Recipe
-import com.example.cookwithpuppy.database.RecipeDatabase
+import com.example.cookwithpuppy.model.database.database.Recipe
+import com.example.cookwithpuppy.model.database.database.RecipeDatabase
 import kotlinx.android.synthetic.main.activity_display_recipe.*
 
 
@@ -55,7 +55,7 @@ class DisplayMyRecipe : AppCompatActivity() {
 
             val deleteAlert = AlertDialog.Builder(this)
             deleteAlert.setTitle("Delete recipe")
-            deleteAlert.setMessage("Are you sure to delete this recipe?")
+            deleteAlert.setMessage("Are you sure you want to delete this recipe?")
 
             deleteAlert.setPositiveButton(android.R.string.yes) { dialog, which ->
                 DeleteTask().execute()
@@ -64,8 +64,7 @@ class DisplayMyRecipe : AppCompatActivity() {
                 this.finish()
             }
 
-            deleteAlert.setNegativeButton("Cancel") { dialog, which ->
-                           }
+            deleteAlert.setNegativeButton("Cancel") { _, _ -> }
 
             deleteAlert.show()
 

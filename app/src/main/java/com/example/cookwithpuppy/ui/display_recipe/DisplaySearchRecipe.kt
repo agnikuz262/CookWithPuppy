@@ -3,7 +3,6 @@ package com.example.cookwithpuppy.ui.display_recipe
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.cookwithpuppy.R
-import com.example.cookwithpuppy.database.Recipe
 import kotlinx.android.synthetic.main.activity_display_recipe.*
 
 class DisplaySearchRecipe : AppCompatActivity() {

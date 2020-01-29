@@ -3,10 +3,8 @@ package com.example.cookwithpuppy.ui.myrecipes
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import com.example.cookwithpuppy.database.Recipe
-import com.example.cookwithpuppy.database.RecipeDatabase
+import com.example.cookwithpuppy.model.database.database.Recipe
+import com.example.cookwithpuppy.model.database.database.RecipeDatabase
 
 class MyRecipesViewModel(application: Application) : AndroidViewModel(application) {
 

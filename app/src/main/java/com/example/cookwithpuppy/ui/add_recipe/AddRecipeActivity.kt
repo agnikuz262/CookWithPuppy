@@ -2,13 +2,10 @@ package com.example.cookwithpuppy.ui.add_recipe
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.SyncStateContract.Helpers.insert
-import android.util.Log
 import android.widget.Toast
-import androidx.room.Room
 import com.example.cookwithpuppy.R
-import com.example.cookwithpuppy.database.Recipe
-import com.example.cookwithpuppy.database.RecipeDatabase
+import com.example.cookwithpuppy.model.database.database.Recipe
+import com.example.cookwithpuppy.model.database.database.RecipeDatabase
 import kotlinx.android.synthetic.main.activity_add_recipe.*
 
 class AddRecipeActivity : AppCompatActivity() {
@@ -29,7 +26,12 @@ class AddRecipeActivity : AppCompatActivity() {
                     val ingredients = edit_ingredients.text.toString()
 
 
-                    val recipe = Recipe(null, title, ingredients)
+                    val recipe =
+                        Recipe(
+                            null,
+                            title,
+                            ingredients
+                        )
 
                     db.recipeDao().insert(recipe)
 

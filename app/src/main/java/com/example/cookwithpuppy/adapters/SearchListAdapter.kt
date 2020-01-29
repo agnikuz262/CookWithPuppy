@@ -13,10 +13,9 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cookwithpuppy.MainActivity
 import com.example.cookwithpuppy.R
-import com.example.cookwithpuppy.database.Recipe
-import com.example.cookwithpuppy.database.RecipeDatabase
+import com.example.cookwithpuppy.model.database.database.Recipe
+import com.example.cookwithpuppy.model.database.database.RecipeDatabase
 import com.example.cookwithpuppy.json.ResultRecipe
-import com.example.cookwithpuppy.ui.display_recipe.DisplayMyRecipe
 import com.example.cookwithpuppy.ui.display_recipe.DisplaySearchRecipe
 
 
@@ -40,7 +39,12 @@ class SearchListAdapter(val recipes: List<ResultRecipe?>?,
             Thread {
                 val db = RecipeDatabase.getInstance(context)
 
-                val insertRecipe = Recipe(null, recipe.title!!, recipe.ingredients!!)
+                val insertRecipe =
+                    Recipe(
+                        null,
+                        recipe.title!!,
+                        recipe.ingredients!!
+                    )
                 db.recipeDao().insert(insertRecipe)
 
             }.start()

@@ -1,8 +1,8 @@
-package com.example.cookwithpuppy.database
+package com.example.cookwithpuppy.model.database.database
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.room.*
+import com.example.cookwithpuppy.model.database.database.Recipe
 
 @Dao
 interface RecipeDatabaseDao {
