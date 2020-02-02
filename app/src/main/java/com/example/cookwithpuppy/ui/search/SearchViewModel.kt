@@ -12,13 +12,10 @@ import java.io.IOException
 
 class SearchViewModel : ViewModel() {
 
-    private var searchedList = ResultRecipesList().listItems
+    fun getDataFromAPI(typedSearch: String): ResultRecipesList {
+        val dataFromApi = APIconnection().listFromAPI(typedSearch)
 
-
-//    fun getDataFromAPI(typedSearch: String): ResultRecipesList {
-//        val dataFromApi = APIconnection().listFromAPI(typedSearch)
-//
-//        return dataFromApi
-//    }
+        return dataFromApi
+    }
 
 }
