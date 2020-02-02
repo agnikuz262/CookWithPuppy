@@ -40,19 +40,22 @@ class SearchFragment : Fragment() {
             if (search_title?.text.toString() == "") {
                 Toast.makeText(requireContext(), "Missing search data!", Toast.LENGTH_SHORT).show()
             } else {
-//           val response = searchViewModel.getDataFromAPI(search_title?.text.toString())
-//            Thread.sleep(1000)
+           val response = searchViewModel.getDataFromAPI(search_title?.text.toString())
+            Thread.sleep(1000)
+                
+//              static list in case of error in API
 
-            val list = mutableListOf<ResultRecipe>()
-                val recipe1 = ResultRecipe("","rice, tomatos","http://www.google.com","Chicken with rice")
-                val recipe2 = ResultRecipe("","olive, tomatos","http://www.facebook.com","Hamburger")
-                val recipe3 = ResultRecipe("","Potatos","http://www.github.com","Pommes fries")
-                list.add(recipe1)
-                list.add(recipe2)
-                list.add(recipe3)
+//            val list = mutableListOf<ResultRecipe>()
+//                val recipe1 = ResultRecipe("","rice, tomatos","http://www.google.com","Chicken with rice")
+//                val recipe2 = ResultRecipe("","olive, tomatos","http://www.facebook.com","Hamburger")
+//                val recipe3 = ResultRecipe("","Potatos","http://www.github.com","Pommes fries")
+//                list.add(recipe1)
+//                list.add(recipe2)
+//                list.add(recipe3)
                 
                 adapter = SearchListAdapter(
-                    list,
+//                  list,
+                    response.listItems,
                     requireContext(), this
                 )
                 recycler_search.adapter = adapter

@@ -55,7 +55,7 @@ class DisplayMyRecipe : AppCompatActivity() {
             deleteAlert.setTitle("Delete recipe")
             deleteAlert.setMessage("Are you sure you want to delete this recipe?")
 
-            deleteAlert.setPositiveButton(android.R.string.yes) { dialog, which ->
+            deleteAlert.setPositiveButton(android.R.string.yes) { _,_ ->
                 DeleteTask().execute()
                 Toast.makeText(applicationContext,
                     "Recipe deleted", Toast.LENGTH_SHORT).show()
