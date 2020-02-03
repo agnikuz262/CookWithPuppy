@@ -1,8 +1,10 @@
 package com.example.cookwithpuppy.ui.display_recipe
 
+import android.content.Context
 import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -82,7 +84,12 @@ class DisplayMyRecipe : AppCompatActivity() {
                 db.recipeDao().update(recipe)
 
             }.start()
-
+            val inputManager: InputMethodManager =
+                this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            inputManager.hideSoftInputFromWindow(
+                this.currentFocus!!.windowToken,
+                InputMethodManager.HIDE_NOT_ALWAYS
+            )
             Toast.makeText(applicationContext,
                 "Recipe updated", Toast.LENGTH_SHORT).show()
         }

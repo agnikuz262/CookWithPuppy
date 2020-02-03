@@ -13,7 +13,6 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".ui.display_recipe.DisplaySearchRecipe"></activity>
-        <activity android:name=".ui.AboutActivity" />
         <activity android:name=".ui.add_recipe.AddRecipeActivity" />
         <activity android:name=".ui.display_recipe.DisplayMyRecipe" />
         <activity

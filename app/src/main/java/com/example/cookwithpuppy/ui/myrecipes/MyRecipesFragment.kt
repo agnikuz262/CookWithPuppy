@@ -49,8 +49,7 @@ class MyRecipesFragment : Fragment() {
 
         myRecipesViewModel.allRecipes.observe(this,
             Observer {
-
-                adapter = MyRecipesListAdapter(it,requireContext(),this)
+                adapter = MyRecipesListAdapter(it.sortedBy { it.title },requireContext(),this)
                 recycler_myrecipes.adapter = adapter
                 recycler_myrecipes.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
             })

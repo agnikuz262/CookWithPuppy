@@ -11,7 +11,7 @@
     <string name="menu_search">Search</string>
     <string name="menu_favourite">Favourites</string>
     <string name="menu_about">About</string>
-    <string name="no_href">No link added</string>
+    <string name="no_href">No URL added</string>
     <string name="add">Add</string>
     <string name="update">Update</string>
     <string name="search">Search</string>
@@ -24,6 +24,7 @@
     <string name="dog">Dog icon</string>
     <string name="add_button">Add to My recipes</string>
     <string name="delete">Delete</string>
+    <string name="add_href">Paste URL to the recipe</string>
     <string name="about_description">This application enables you to create your own recipes and search for
     new ones. You can add them to Favourites and enjoy whenever you want.
 

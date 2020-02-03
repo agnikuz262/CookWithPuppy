@@ -2,6 +2,7 @@ package com.example.cookwithpuppy.ui.add_recipe
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.Toast
 import com.example.cookwithpuppy.R
 import com.example.cookwithpuppy.model.database.database.Recipe
@@ -24,7 +25,8 @@ class AddRecipeActivity : AppCompatActivity() {
                 Thread {
                     val title = edit_title.text.toString()
                     val ingredients = edit_ingredients.text.toString()
-                    val recipe = Recipe(null, title, ingredients, null, 0)
+                    val href : String? = edit_href.text.toString()
+                    val recipe = Recipe(null, title, ingredients, href, 0)
                     db.recipeDao().insert(recipe)
 
                 }.start()

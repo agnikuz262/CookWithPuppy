@@ -2,7 +2,8 @@
 <resources>
     <color name="colorPrimary">#FB8C00</color>
     <color name="colorPrimaryDark">#F57C00</color>
-    <color name="colorAccent">#FFCC80</color>
+    <color name="colorAccent">#F86B7C</color>
     <color name="recipe_background">#FFFFFF</color>
+    <color name="button">#F54358</color>
 
 </resources>
